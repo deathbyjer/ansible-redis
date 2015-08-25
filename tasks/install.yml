@@ -40,6 +40,10 @@
   shell: tar xf /usr/local/src/redis-{{ redis_version }}.tar.gz -C /usr/local/src
          creates=/usr/local/src/redis-{{ redis_version }}
 
+- name: clean the dist
+  command: make distclean
+           chdir=/usr/local/src/redis-{{ redis_version }}
+  
 - name: compile redis
   command: make -j5
            chdir=/usr/local/src/redis-{{ redis_version }}
