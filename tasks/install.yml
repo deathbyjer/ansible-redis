@@ -119,3 +119,11 @@
   args:
     chdir: /usr/local/src/redis-{{ redis_version }}
     creates: "{{ redis_install_dir }}/bin/redis-server"
+    
+- name: create redis log directory
+  file:
+    state: directory
+    path: "{{ redis_logdir }}"
+    owner: "{{redis_user}}"
+    group: "{{redis_user}}"
+  

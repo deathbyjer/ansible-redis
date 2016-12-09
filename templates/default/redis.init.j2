@@ -23,7 +23,7 @@ case "$1" in
         else
                 ulimit -n {{ redis_nofile_limit }}
                 echo "Starting Redis server..."
-                su $REDIS_USER -c "$EXEC $CONF"
+                sudo -u $REDIS_USER $EXEC $CONF
         fi
         ;;
     stop)

@@ -47,7 +47,8 @@ redis_slave_priority: 100
 redis_repl_backlog_size: false
 
 ## Logging
-redis_logfile: '""'
+redis_logdir: /var/log/redis
+redis_logfile: /var/log/redis/redis.log
 # Enable syslog. "yes" or "no"
 redis_syslog_enabled: "yes"
 redis_syslog_ident: "{{ redis_service_name }}"

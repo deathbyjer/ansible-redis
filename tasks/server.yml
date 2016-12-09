@@ -5,6 +5,7 @@
     state: directory
     recurse: yes
     owner: "{{ redis_user }}"
+    owner: "{{ group }}"
 
 - name: create redis init script
   template:
